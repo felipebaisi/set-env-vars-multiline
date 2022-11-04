@@ -41,6 +41,9 @@ const core = __importStar(__nccwpck_require__(186));
 function run(multiLineVars) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log("Received multivars", multiLineVars);
+        const currentData = multiLineVars.split(/(?:\r\n|\r|\n)/g);
+        console.log(currentData);
+        console.log("Currentd data length", currentData.length);
     });
 }
 // Collecting inputs

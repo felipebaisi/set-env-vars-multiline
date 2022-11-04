@@ -7,6 +7,10 @@ async function run(
   multiLineVars: string,
 ): Promise<void> {
   console.log("Received multivars", multiLineVars)
+  const currentData = multiLineVars.split(/(?:\r\n|\r|\n)/g);
+  console.log(currentData)
+  console.log("Currentd data length", currentData.length)
+
 
 
 }

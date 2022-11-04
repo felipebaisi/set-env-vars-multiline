@@ -8,5 +8,5 @@ inputs:
     description: 'MULTI_LINE_VARS'
 
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
