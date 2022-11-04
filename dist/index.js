@@ -38,12 +38,18 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 // import {Octokit} from '@octokit/rest';
 const core = __importStar(__nccwpck_require__(186));
 // import {createAppAuth} from '@octokit/auth-app';
+const setEnvironmentVariable = (key, value) => {
+    core.exportVariable(key, value);
+};
 function run(multiLineVars) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log("Received multivars", multiLineVars);
-        const currentData = multiLineVars.split(/(?:\r\n|\r|\n)/g);
-        console.log(currentData);
-        console.log("Currentd data length", currentData.length);
+        const varsArray = multiLineVars.split(/(?:\r\n|\r|\n)/g);
+        for (const vars of varsArray) {
+            const keypair = vars.split("=");
+            console.log(`Setting ${keypair[0]} to ${keypair[1]}`);
+            setEnvironmentVariable(keypair[0], keypair[1]);
+        }
     });
 }
 // Collecting inputs
