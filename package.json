@@ -1,9 +1,10 @@
 {
-  "name": "action-github-app-auth",
+  "name": "set-env-vars-multiline",
   "version": "1.0.0",
-  "description": "Gets a GitHub App JWT and Installation access token",
+  "description": "set-env-vars-multiline",
   "main": "lib/main.js",
   "scripts": {
+    "tsc": "./node_modules/typescript/bin/tsc",
     "build": "yarn tsc",
     "format": "yarn prettier --write **/*.ts",
     "format-check": "yarn prettier --check **/*.ts",
@@ -14,13 +15,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LexisNexis-GHA-Public/action-github-app-auth"
+    "url": "https://github.com/felipebaisi/set-env-vars-multiline"
   },
   "keywords": [
     "actions",
     "github app",
-    "github installation access token",
-    "github action"
+    "github action",
+    "github set env vars"
   ],
   "author": "Felipe Baisi",
   "license": "MIT",
@@ -44,9 +45,7 @@
     "node-fetch": "2.6.1"
   },
   "dependencies": {
-    "@actions/core": "1.5.0",
-    "@octokit/auth-app": "3.6.0",
-    "@octokit/rest": "18.9.1"
+    "@actions/core": "1.5.0"
   },
   "devDependencies": {
     "@types/jest": "27.0.1",
